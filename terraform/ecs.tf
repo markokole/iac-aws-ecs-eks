@@ -10,7 +10,7 @@ resource "aws_ecs_cluster" "ping" {
 resource "aws_ecs_task_definition" "task" {
   family                        = "service"
   network_mode                  = "awsvpc"
-  requires_compatibilities      = ["FARGATE"]
+  requires_compatibilities      = ["FARGATE", "EC2"]
   cpu                           = 512
   memory                        = 2048
   container_definitions         = jsonencode([
